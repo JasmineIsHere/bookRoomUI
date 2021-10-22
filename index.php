@@ -1,6 +1,9 @@
 <?php
-	$url = $_ENV['room_service_url'] . "/room"; 
+	// $url = $_ENV['room_service_url'] . "/room"; // update when dev.env is created 
+    $url = "http://localhost:8080/room"; 
+    
 ?>
+
     
     <!DOCTYPE html>
     <html>
@@ -10,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
     
-        <title>Meeting Rooms</title>
+        <title>HomePage: View Meeting Rooms</title>
     
         <link rel="stylesheet" href="">
         <!--[if lt IE 9]>
@@ -73,7 +76,7 @@
                     const response =
                         await fetch(
                             serviceURL, { mode: 'cors', method: 'GET' }
-                        );
+                        ); //send GET request to /room
                     const result = await response.json();
                     if (response.status === 200) {
                         // success case
@@ -87,8 +90,7 @@
                                 '<td>' + room.level + '</td>' +
                                 '<td>' + room.price + '</td>' +
                                 '<td>' + room.capacity + '</td>' +
-                                '<td><a href="bookRoom.php?room_id=' + room.roomNo + '" style="text-decoration: none;">&#10060;</a></td>';
-                                // change available booking to tick, occupied remained cross
+                                '<td><a href="bookRoom.php?roomNo=' + room.roomNo + '" style="text-decoration: none;">book;</a></td>';
                             rows += '<tbody><tr>' + eachRow + '</tr></tbody>';
                         }
                         // add all the rows to the table

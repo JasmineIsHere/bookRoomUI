@@ -1,7 +1,3 @@
-<!-- <?php
-	$url = $_ENV['games_service_url'] . "/games";
-?> -->
-
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +32,14 @@
 
 <body>
 	<div id="main-container" class="container">
-		<h1 class="display-4">Meeting Rooms – Make a Booking Now!</h1>
+        <?php
+            $roomNo = $_GET['roomNo'];
+        ?>
+        
+		<h1 class="display-4"><?php
+            echo "Booking " . $roomNo;
+        ?> </h1>
+        
 		<form id='addBookingForm'>
 
 			<div class="form-group">
@@ -52,6 +55,7 @@
 			<div class="form-group">
 				<label for="date">Date of Booking:</label>
 				<input type="date" class="form-control" id="date">
+                <!-- write a script that retrieves all available dates instead -->
 			</div>
 
 			<div class="form-group">
@@ -88,6 +92,7 @@
 		const serviceURL = './addNewBooking.php'
 
         //Get form data 
+        const roomNo = <?php echo $roomNo; ?>
         const name = $('#name').val();
         const email = $('#email').val();
         const date = parseFloat($('#date').val());
@@ -99,7 +104,7 @@
                     serviceURL, {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name: name, email: email, date: date, pax: pax })
+                    body: JSON.stringify({ roomNo: roomNo, name: name, email: email, date: date, pax: pax })
                 });
             const data = await response.json();
 
