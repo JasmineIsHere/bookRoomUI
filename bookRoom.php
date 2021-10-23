@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
 
-    <name>Meeting Rooms – Make a Booking</name>
+    <title>Meeting Rooms – Make a Booking</title>
 
     <link rel="stylesheet" href="">
     <!--[if lt IE 9]>

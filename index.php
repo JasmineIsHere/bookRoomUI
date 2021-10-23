@@ -42,6 +42,10 @@
     <body>
         <div id="main-container" class="container">
             <h1 class="display-4">Meeting Rooms &#128187;</h1>
+
+            <!-- test -->
+            <a href = "bookRoom.php"> <button>bookRoom.php</button></a>
+
             <table id="roomTable" class='table table-striped' border='1'>
                 <thead class='thead-dark'>
                     <tr>
@@ -57,15 +61,15 @@
         </div>
     
         <script>
-            // Helper function to display error message
-            function showError(message) {
-                // Hide the table and button in the event of error
-                $('#roomTable').hide();
+            // // Helper function to display error message
+            // function showError(message) {
+            //     // Hide the table and button in the event of error
+            //     $('#roomTable').hide();
     
-                // Display an error under the main container
-                $('#main-container')
-                    .append("<label>" + message + "</label>");
-            }
+            //     // Display an error under the main container
+            //     $('#main-container')
+            //         .append("<label>" + message + "</label>");
+            // }
     
             // anonymous async function - using await requires the function that calls it to be async
             $(async () => {
