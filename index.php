@@ -1,6 +1,6 @@
 <?php
 	// $url = $_ENV['room_service_url'] . "/room"; // update when dev.env is created 
-    $url = "http://localhost:8080/room"; 
+    $url = "http://localhost:8080/room";  ///test test
     
 ?>
 
